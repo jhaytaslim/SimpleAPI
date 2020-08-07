@@ -35,6 +35,12 @@ SimpleAPI/[Bb]in/
 SimpleAPI/[Oo]bj/
 SimpleAPI.Tests/[Bb]in/
 SimpleAPI.Tests/[Oo]bj/
+
+SimpleAPI/bin/
+SimpleAPI/obj/
+SimpleAPI.Tests/bin/
+SimpleAPI.Tests/obj/
+
 [Ll]og/
 [Ll]ogs/
 
