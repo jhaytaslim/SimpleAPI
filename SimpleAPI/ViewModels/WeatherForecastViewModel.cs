@@ -1,8 +1,11 @@
-using System;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
-namespace SimpleAPI
+namespace SimpleAPI.ViewModels
 {
-    public class WeatherForecast
+    public class WeatherForecastViewModel
     {
         public DateTime Date { get; set; }
 

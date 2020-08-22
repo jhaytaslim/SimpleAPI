@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using SimpleAPI.ViewModels;
 
 namespace SimpleAPI.Controllers
 {
@@ -18,23 +19,40 @@ namespace SimpleAPI.Controllers
 
         private readonly ILogger<WeatherForecastController> _logger;
 
-        //public WeatherForecastController(ILogger<WeatherForecastController> logger)
-        //{
-           
-        //}
-        
+       
 
+        public WeatherForecastController(ILogger<WeatherForecastController> logger=null)
+        {
+            _logger = logger;
+        }
+
+
+        [Route("get")]
         [HttpGet]
-        public IEnumerable<WeatherForecast> Get()
+        public IEnumerable<WeatherForecastViewModel> Get()
         {
             var rng = new Random();
-            return Enumerable.Range(1, 5).Select(index => new WeatherForecast
+            return Enumerable.Range(1, 5).Select(index => new WeatherForecastViewModel
             {
                 Date = DateTime.Now.AddDays(index),
                 TemperatureC = rng.Next(-20, 55),
                 Summary = Summaries[rng.Next(Summaries.Length)]
             })
             .ToArray();
+        }
+
+        [Route("get/{id:int}")]
+        [HttpGet]
+        public WeatherForecastViewModel Get(int id)
+        {
+            var rng = new Random();
+            return Enumerable.Range(1, 5).Select(index => new WeatherForecastViewModel
+            {
+                Date = DateTime.Now.AddDays(index),
+                TemperatureC = rng.Next(-20, 55),
+                Summary = Summaries[rng.Next(Summaries.Length)]
+            })
+            .FirstOrDefault(x=>x.Date.Date== DateTime.Now.Date.AddDays(id));
         }
     }
 }
