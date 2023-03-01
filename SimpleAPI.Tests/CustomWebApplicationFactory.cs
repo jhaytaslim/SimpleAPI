@@ -42,7 +42,7 @@ namespace SimpleAPI.Tests
                     try
                     {
                         // Seed the database with some specific test data.
-                        SeedData.PopulateTestData(appDb);
+                        // SeedData.PopulateTestData(appDb);
                     }
                     catch (Exception ex)
                     {

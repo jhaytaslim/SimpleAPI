@@ -18,7 +18,7 @@ namespace SimpleAPI.Tests
         }
 
         [Fact]
-        public async Task CanGetPlayers()
+        public async Task CanGetForecasts()
         {
             // The endpoint or route of the controller action.
             var httpResponse = await _client.GetAsync("/WeatherForecast/Get");

@@ -37,8 +37,6 @@ namespace SimpleAPI.Tests
                 }
             };
 
-            _mockWeatherForecastList.Object.AddRange(mockForecasts);
-
             //act
             var result = _weatherForecastController.Get();
 
@@ -46,5 +44,6 @@ namespace SimpleAPI.Tests
             var model = Assert.IsAssignableFrom<IEnumerable<WeatherForecastViewModel>>(result);
             Assert.Equal(5,model.ToList().Count);
         }
+    
     }
 }

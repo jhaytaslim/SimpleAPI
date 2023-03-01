@@ -1,0 +1,21 @@
+{
+   "tasks": [
+      {
+         "name": "dotnet-format-example",
+         "command": "dotnet",
+         "args": [ "format", "./Nakise.sln" ],
+         "include": [ "**/*.cs", "**/*.vb" ]
+      },
+      {
+         "name": "commit-message-linter",
+         "command": "dotnet",
+         "args": [
+            "husky",
+            "exec",
+            ".husky/csx/commit-lint.csx",
+            "--args",
+            "${args}"
+         ]
+      }
+   ]
+}
