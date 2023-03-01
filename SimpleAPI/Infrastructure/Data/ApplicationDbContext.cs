@@ -25,7 +25,6 @@ namespace SimpleAPI.Infrastructure.Data
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);
-            //optionsBuilder.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
         }
 
         public DbSet<WeatherForecast> Forecast { get; set; }
