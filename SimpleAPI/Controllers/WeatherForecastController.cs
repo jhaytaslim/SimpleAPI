@@ -41,7 +41,7 @@ namespace SimpleAPI.Controllers
             var validFilter = new PaginationFilter(filter.PageNumber, filter.PageSize);
             var pagedData = weatherForecastService.Get(validFilter);
 
-Console.WriteLine($"pageD: {pagedData} | valid: {validFilter.PageNumber} --- {validFilter.PageSize} ---> {pagedData.Count}");
+Console.WriteLine($"pageD: {pagedData.Count} | valid: {validFilter.PageNumber} --- {validFilter.PageSize} ---> {pagedData.Count}");
             var rng = new Random();
             var pagedReponse = PaginationHelper.CreatePagedReponse<WeatherForecastViewModel>(pagedData, validFilter, validFilter.PageLastIndex * 2, uriService, route);
     
